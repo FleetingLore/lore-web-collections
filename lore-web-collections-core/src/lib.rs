@@ -1,4 +1,4 @@
-pub enum LineTypes {
+pub enum LineType {
     /// empty line
     Empty,
 

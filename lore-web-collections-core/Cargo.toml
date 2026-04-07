@@ -2,7 +2,7 @@
 name = "lore-web-collections-core"
 version = "0.1.0"
 edition = "2024"
-description = "Core traits for Lore "
+description = "Line types of Web Collections"
 license = "MIT"
 homepage = "https://fleetinglore.github.io"
 repository = "https://github.com/dotCorain/lore-web-collections"
