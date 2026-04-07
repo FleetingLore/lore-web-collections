@@ -78,6 +78,9 @@ dependencies = [
 [[package]]
 name = "lore-impl-web-collections-2026-04-07-2"
 version = "0.1.0"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "lore-implementation-web-collections-to-info"
