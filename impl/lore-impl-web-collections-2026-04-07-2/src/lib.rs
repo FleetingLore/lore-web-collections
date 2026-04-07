@@ -67,3 +67,49 @@ impl Parser {
         Info { content }
     }
 }
+
+/// 每个转为 html 格式的 lore 文件
+pub struct LoreHtml {
+    /// 目标文件的标题
+    pub title: String,
+
+    /// 样式表字面值
+    pub css_path: String,
+
+    /// 内容字面值
+    pub html_content: String,
+}
+
+impl LoreHtml {
+    pub fn new(
+        title: String,
+        css_path: String,
+        html_content: String
+    ) -> Self {
+        LoreHtml { title, css_path, html_content }
+    }
+}
+
+/// 导出为字符串
+impl Into<Info> for LoreHtml {
+    fn into(self) -> Info {
+        let content: String = format!(
+            r#"<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{}</title>
+<link rel="stylesheet" href="{}">
+</head>
+<body><main>
+{}
+</main></body>
+</html>"#,
+            self.title,
+            self.css_path,
+            self.html_content,
+        );
+
+        Info { content }
+    }
+}
