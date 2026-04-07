@@ -9,3 +9,4 @@ repository = "https://github.com/dotCorain/lore-web-collections"
 readme = "README.md"
 
 [dependencies]
+lore-web-collections-core = { version = "0.1.1" }
