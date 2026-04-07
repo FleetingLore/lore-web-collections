@@ -1,6 +1,6 @@
 use std::fs;
-use lore_lexer_web_collections_d1::Parser;
-use lore_protocol_web_collections::LineTypes;
+use lore_lexer_web_collections_2026_04_07_1::Parser;
+use lore_web_collections_core::LineType;
 
 #[test]
 fn test_parser() {
@@ -17,15 +17,15 @@ fn test_parser() {
     }
 }
 
-fn display_line(n: usize, line: LineTypes) {
+fn display_line(n: usize, line: LineType) {
     let content = match line {
-        LineTypes::Empty => "<Empty>".to_string(),
-        LineTypes::Atom(atom) => format!("atom {}", atom),
-        LineTypes::UrlLink(name, url) => format!("#[url] {} = {}", name, url),
-        LineTypes::LoreLink(name, lore) => format!("#[lore] {} = {}", name, lore),
-        LineTypes::Placeholder => "<Placeholder>".to_string(),
-        LineTypes::Comment(comment) => format!("# {}", comment),
-        LineTypes::DomainTitle(title) => format!("+ {}", title),
+        LineType::Empty => "<Empty>".to_string(),
+        LineType::Atom(atom) => format!("atom {}", atom),
+        LineType::UrlLink(name, url) => format!("#[url] {} = {}", name, url),
+        LineType::LoreLink(name, lore) => format!("#[lore] {} = {}", name, lore),
+        LineType::Placeholder => "<Placeholder>".to_string(),
+        LineType::Comment(comment) => format!("# {}", comment),
+        LineType::DomainTitle(title) => format!("+ {}", title),
     };
 
     println!("[{}] {}", n, content);

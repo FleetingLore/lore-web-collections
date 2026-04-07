@@ -4,5 +4,9 @@ version = "0.1.0"
 edition = "2024"
 description = "Lore Lexer Web Collections 2026 04 07 1"
 license = "MIT"
+homepage = "https://fleetinglore.github.io"
+repository = "https://github.com/dotCorain/lore-web-collections"
+readme = "README.md"
 
 [dependencies]
+lore-web-collections-core = { version = "0.1.1" }

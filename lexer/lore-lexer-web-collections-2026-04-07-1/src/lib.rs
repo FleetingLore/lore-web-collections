@@ -1,18 +1,18 @@
-use lore_protocol_web_collections::LineTypes;
+use lore_web_collections_core::LineType;
 
 pub struct Parser;
 
 impl Parser {
-    pub fn parse_line(raw_line: &str) -> LineTypes {
+    pub fn parse_line(raw_line: &str) -> LineType {
         let content = raw_line;
     
         let line = if content.is_empty() {
-            LineTypes::Empty
+            LineType::Empty
         } else if content.contains(" | ") {
             let (name, url) = content.split_once(" | ").unwrap();
             let name = name.to_string();
             let url = url.to_string();
-            LineTypes::UrlLink(
+            LineType::UrlLink(
                 name,
                 url
             )
@@ -20,7 +20,7 @@ impl Parser {
             let (name, category) = content.split_once(" = ").unwrap();
             let name = name.to_string();
             let category = category.to_string();
-            LineTypes::LoreLink(
+            LineType::LoreLink(
                 name,
                 category,
             )
@@ -29,7 +29,7 @@ impl Parser {
                 .strip_prefix("+ ")
                 .unwrap()
                 .to_string();
-            LineTypes::DomainTitle(
+            LineType::DomainTitle(
                 category
             )
         } else if content.starts_with("# ") {
@@ -37,13 +37,13 @@ impl Parser {
                 .strip_prefix("# ")
                 .unwrap()
                 .to_string();
-            LineTypes::Comment(
+            LineType::Comment(
                 comment
             )
         } else if content == "---" {
-            LineTypes::Placeholder
+            LineType::Placeholder
         } else {
-            LineTypes::Atom(
+            LineType::Atom(
                 content.to_string()
             )
         };
