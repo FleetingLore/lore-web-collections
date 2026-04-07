@@ -110,7 +110,7 @@ checksum = "a26b01d5048729f1eb895e1007c87f269f8f32786750d49ac50a4bf6f998eca2"
 
 [[package]]
 name = "lore-web-collections-core"
-version = "0.1.0"
+version = "0.1.1"
 
 [[package]]
 name = "proc-macro2"
