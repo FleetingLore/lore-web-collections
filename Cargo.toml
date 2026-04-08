@@ -11,3 +11,9 @@ members = [
     "bin/lore-bin-web-collections-2026-04-07-4"
     ]
 resolver = "3"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = "symbols"
