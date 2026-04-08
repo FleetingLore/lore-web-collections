@@ -8,7 +8,7 @@ fn test_models() {
     let impl_context = ImplContext {
         title: "Example Web Collections",
         link_base: "https://www.example.com/",
-        css_url: "https://www.example.css",
+        css_url: "https://fleetinglore.github.io/css/style.css",
     };
     let parser = Parser { impl_context: &impl_context };
 
